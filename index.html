@@ -24,7 +24,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    
+
                     <li class="nav-item px-lg-2">
                         <a class="nav-link" href="#palo-santo">Palo Santo</a>
                     </li>
@@ -47,7 +47,8 @@
                     Dacă sunteți în căutarea opțiunii potrivite pentru un ritual de curățare a unui spațiu cu multă
                     energie negativă, atunci sa aprindeti salvie poate fi ideal.
                 </p>
-                <p class="px-5">Palo Santo este o alegere fantastică dacă doriți să promovați o dispoziție pozitivă și relaxare sau
+                <p class="px-5">Palo Santo este o alegere fantastică dacă doriți să promovați o dispoziție pozitivă și
+                    relaxare sau
                     să creați o
                     atmosferă pentru încurajarea creativității. Multe dintre beneficiile Palo Santo provin din limonenul
                     din acesta,
@@ -83,28 +84,40 @@
         </div>
 
         <div class="row justify-content-center py-5" id="comanda">
-            <div class="col-md-6">
-                <form>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">Nume</label>
+            <div class="card col" style="width: 18rem;">
+                <div class="card-body">
+
+                    <form>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Nume</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Adresa de e-mail</label>
+                        </div>
+                        <select class="form-select  mb-3" id="produsull" aria-label=".form-select  example">
+                            <option value="Palo Santo">Palo Santo</option>
+                            <option value="Salvia">Salvia</option>
+                        </select>
+                    </form>
+                    <div class="d-grid">
+                        <a href="mailto:spiritual.house444@gmail.com?subject:Palo Santo" id="linkull" class="btn btn-lg" style="background:#5bd664">Trimite</a>
                     </div>
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">Adresa de e-mail</label>
-                    </div>
-                    <select class="form-select  mb-3" aria-label=".form-select  example">
-                        <option selected>Alegeți produsul dorit</option>
-                        <option>Palo Santo</option>
-                        <option>Salvia</option>
-                    </select>
-                </form>
-                <div class="d-grid">
-                    <a href="mailto:" class="btn btn-lg" style="background:#5bd664">Trimite</a>
                 </div>
             </div>
         </div>
     </div>
+    
+    <script>
+        const prod = document.getElementById('produsull');
+        const link = document.getElementById('linkull');
+
+        prod.addEventListener('change', function(){
+            link.setAttribute('href','mailto:spiritual.house444@gmail.com?subject:' + prod.value);
+            console.log(prod.value)
+        })
+    </script>
 </body>
 
 </html>
