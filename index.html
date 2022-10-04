@@ -90,12 +90,12 @@
 
                     <form>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">Nume</label>
+                            <input type="text" class="form-control" id="floatingInput1" placeholder="Nume si prenume">
+                            <label for="floatingInput1">Nume</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">Adresa de e-mail</label>
+                            <input type="email" class="form-control" id="floatingInput2" placeholder="name@example.com">
+                            <label for="floatingInput2">Adresa de e-mail</label>
                         </div>
                         <input type="hidden" id="produsull" />
                         <div class="form-check py-2">
@@ -136,7 +136,7 @@
                           </div>
                     </form>
                     <div class="d-grid pt-3">
-                        <a href="#" id="linkull" class="btn btn-lg" style="background:#5bd664">Trimite</a>
+                        <a href="mailto:spiritual.house444@gmail.com?subject=doresc produse" id="linkull" class="btn btn-lg" style="background:#5bd664">Trimite</a>
                     </div>
                 </div>
             </div>
@@ -157,16 +157,15 @@
                 } else {
                     prod_a.splice(prod_a.indexOf(produs.value),1)
                 }
-                
+                link.setAttribute('href','mailto:spiritual.house444@gmail.com?subject='+document.getElementById('floatingInput1').value + '&body='+document.getElementById('floatingInput2').value +'<br/>'+prod_a.join('<br/>'));
                     
             })
         })
-        link.addEventListener('click',function(e){
-            e.preventDefault();
-            link.setAttribute('href','mailto:spiritual.house444@gmail.com?subject=produse&body=' + prod_a.join('<br/>'));
+        /*link.addEventListener('click',function(e){
+            link.setAttribute('href','mailto:spiritual.house444@gmail.com?subject='+document.getElementById('floatingInput1').value + '&body='+document.getElementById('floatingInput2').value +'<br/>'+prod_a.join('<br/>'));
 
                 
-        })
+        })*/
     </script>
 </body>
 
