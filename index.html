@@ -85,7 +85,7 @@
         </div>
 
         <div class="row justify-content-center py-5" id="comanda">
-            <div class="card col-6">
+            <div class="card col-md-6">
                 <div class="card-body">
 
                     <form>
@@ -99,12 +99,16 @@
                         </div>
                         <select class="form-select  mb-3" id="produsull" aria-label=".form-select  example">
                             <option value="-" selected disabled>Alegeti un produs</option>
-                            <option value="Palo Santo">Palo Santo</option>
-                            <option value="Salvia">Salvia</option>
+                            <option value="Palo Santo 5 buc - 50lei">Palo Santo 5 buc - 50 lei</option>
+                            <option value="Palo Santo 10 buc - 90lei">Palo Santo 10 buc - 90 lei</option>
+                            <option value="Palo Santo 15 buc - 138lei">Palo Santo 15 buc - 138 lei</option>
+                            <option value="Salvia 1 buc - 40lei">Salvia 1 buc - 40 lei</option>
+                            <option value="Salvia 3 buc - 90lei">Salvia 3 buc - 90 lei</option>
+                            <option value="Salvia 10 buc - 250lei">Salvia 10 buc - 250 lei</option>
                         </select>
                     </form>
                     <div class="d-grid">
-                        <a href="mailto:spiritual.house444@gmail.com?subject:Palo Santo" id="linkull" class="btn btn-lg" style="background:#5bd664">Trimite</a>
+                        <a href="mailto:spiritual.house444@gmail.com?subject=Palo Santo" id="linkull" class="btn btn-lg" style="background:#5bd664">Trimite</a>
                     </div>
                 </div>
             </div>
@@ -116,7 +120,7 @@
         const link = document.getElementById('linkull');
 
         prod.addEventListener('change', function(){
-            link.setAttribute('href','mailto:spiritual.house444@gmail.com?subject:' + prod.value);
+            link.setAttribute('href','mailto:spiritual.house444@gmail.com?subject=' + prod.value);
             console.log(prod.value)
         })
     </script>
