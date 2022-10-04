@@ -97,18 +97,46 @@
                             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                             <label for="floatingInput">Adresa de e-mail</label>
                         </div>
-                        <select class="form-select  mb-3" id="produsull" aria-label=".form-select  example">
-                            <option value="-" selected disabled>Alegeti un produs</option>
-                            <option value="Palo Santo 5 buc - 50lei">Palo Santo 5 buc - 50 lei</option>
-                            <option value="Palo Santo 10 buc - 90lei">Palo Santo 10 buc - 90 lei</option>
-                            <option value="Palo Santo 15 buc - 138lei">Palo Santo 15 buc - 138 lei</option>
-                            <option value="Salvia 1 buc - 40lei">Salvia 1 buc - 40 lei</option>
-                            <option value="Salvia 3 buc - 90lei">Salvia 3 buc - 90 lei</option>
-                            <option value="Salvia 10 buc - 250lei">Salvia 10 buc - 250 lei</option>
-                        </select>
+                        <input type="hidden" id="produsull" />
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Palo Santo 5 buc - 50 lei" id="palo1">
+                            <label class="form-check-label" for="palo1">
+                                Palo Santo 5 buc - 50 lei
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Palo Santo 10 buc - 90 lei" id="palo2">
+                            <label class="form-check-label" for="palo2">
+                                Palo Santo 10 buc - 90 lei
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Palo Santo 15 buc - 138 lei" id="palo3">
+                            <label class="form-check-label" for="palo3">
+                                Palo Santo 15 buc - 138 lei
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Salvia 1 buc - 40 lei" id="salvia1">
+                            <label class="form-check-label" for="salvia1">
+                                Salvia 1 buc - 40 lei
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Salvia 3 buc - 90 lei" id="salvia2">
+                            <label class="form-check-label" for="salvia2">
+                                Salvia 3 buc - 90 lei
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Salvia 10 buc - 250 lei" id="salvia3">
+                            <label class="form-check-label" for="salvia3">
+                                Salvia 10 buc - 250 lei
+                            </label>
+                          </div>
                     </form>
                     <div class="d-grid">
-                        <a href="mailto:spiritual.house444@gmail.com?subject=Palo Santo" id="linkull" class="btn btn-lg" style="background:#5bd664">Trimite</a>
+                        <a href="#" id="linkull" class="btn btn-lg" style="background:#5bd664">Trimite</a>
                     </div>
                 </div>
             </div>
@@ -118,10 +146,20 @@
     <script>
         const prod = document.getElementById('produsull');
         const link = document.getElementById('linkull');
+        const produse = document.querySelectorAll('.form-check-input');
+        let prod_a = [];
 
-        prod.addEventListener('change', function(){
-            link.setAttribute('href','mailto:spiritual.house444@gmail.com?subject=' + prod.value);
-            console.log(prod.value)
+        produse.forEach((produs)=>{
+            produs.addEventListener('change', function(){
+                if (prod_a.indexOf(produs.value) == -1)
+                    prod_a.push(produs.value);
+            })
+        })
+        link.addEventListener('click',function(e){
+            e.preventDefault();
+            link.setAttribute('href','mailto:spiritual.house444@gmail.com?subject=produse&body=' + prod_a.join('<br/'));
+
+                
         })
     </script>
 </body>
